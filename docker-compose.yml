@@ -1,0 +1,26 @@
+   nginx-proxy:
+     image: jwilder/nginx-proxy:latest
+     ports:
+      - "80:80"
+     volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+
+   webhook:
+     build: ./hexo
+     expose:
+      - "7777"
+     environment:
+      - VIRTUAL_HOST=webhook.cshuo.top
+      - VIRTUAL_PORT=7777
+     volumes:
+      - /root/compose/blog:/blog
+      - /root/compose/webhook:/webhook
+
+   nginx:
+     image: nginx:1
+     expose: 
+      - "80"
+     environment:
+      - VIRTUAL_HOST=cshuo.top
+     volumes:
+      - /root/compose/blog/public:/usr/share/nginx/html:ro
