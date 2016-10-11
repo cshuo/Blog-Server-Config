@@ -6,7 +6,9 @@
       - /var/run/docker.sock:/tmp/docker.sock:ro
 
    webhook:
-     build: ./hexo
+     image: emitting/hexo:latest
+     working_dir: /webhook
+     command: [node, server.js]
      expose:
       - "7777"
      environment:
