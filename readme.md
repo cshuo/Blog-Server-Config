@@ -3,7 +3,7 @@
 ### How to run?
 - Clone this project.
 - Put your hexo blog directory under this project.
-- Change docker-compose.yml according to the path of this project and your domain name.
-- run command "docker-compose up -d".
+- Modify docker-compose.yml according to the path of this project and your domain name.
+- Run command "docker-compose up -d".
 
 Enjoy your blog!
