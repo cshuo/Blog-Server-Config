@@ -7,3 +7,5 @@
 - Run command "docker-compose up -d".
 
 Enjoy your blog!
+
+This is a test for gitpod.
